@@ -14,17 +14,17 @@
 </head>
 
 <body>
-<h2>parent comp</h2>
+  <h2>parent comp</h2>
   <div class="w-25">
     <label for="name" class="visually-hidden">Name</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter name" #val (keyup) ="keypress(val.value)">
+    <input type="text" class="form-control" id="name" placeholder="Enter name" #val (keyup)="keypress(val.value)">
     <br>
 
   </div>
 
-  <app-child [data]="parentData"></app-child>
-  <button type="submit" class="btn btn-primary mb-3" (click) ="buttonclick()">Destroyed second Componunts</button>
-  <div *ngIf="second">
+  <app-child [data]="parentData"><p> ngAfterContent : {{parentData}}</p></app-child>
+  <button type="submit" class="btn btn-primary mb-3" (click)="buttonclick()">Destroyed second Componunts</button>
+  <div *ngIf="secondCompIsActive">
     <app-second-child></app-second-child>
   </div>
 </body>

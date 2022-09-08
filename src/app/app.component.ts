@@ -8,15 +8,16 @@ import { Component, SimpleChange, OnDestroy } from '@angular/core';
 export class AppComponent {
   title = 'hooks-events';
   parentData = '';
-  second: boolean = true;
+  secondCompIsActive: boolean = true;
   keypress(val: string) {
     this.parentData = val;
   }
   buttonclick() {
-    if (this.second) {
-      this.second = false;
+    if (this.secondCompIsActive) {
+      this.secondCompIsActive = false;
     } else {
-      this.second = true;
+      this.secondCompIsActive = true;
     }
   }
+
 }
